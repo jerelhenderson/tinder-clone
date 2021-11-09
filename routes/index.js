@@ -1,5 +1,7 @@
+// Routing connections come through here
+
 const authRoutes = require("./auth");
-const usersRoutes = require("./users");
+const userRoutes = require("./users");
 const matchRequestRoutes = require("./requests");
 
 module.exports = ({ app, dbConn, upload, constants }) => {
@@ -7,4 +9,3 @@ module.exports = ({ app, dbConn, upload, constants }) => {
     userRoutes ({ app, dbConn, upload });
     matchRequestRoutes({ app, dbConn, constants });
 };
-

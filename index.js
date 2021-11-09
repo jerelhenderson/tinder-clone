@@ -1,4 +1,4 @@
-require("donenv").config();
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
@@ -48,7 +48,7 @@ dbConn.connect((err) => {
     }
     console.log("Database was connected");
     require("./routes")({ app, dbConn, upload, constants });
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
         console.log(`Server is listening on port ${PORT}`);
     })
 });
