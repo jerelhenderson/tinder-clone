@@ -5,12 +5,12 @@ const express = require("express");
 const multer = require("multer");
 const mysql = require("mysql");
 const path = require("path");
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
