@@ -4,7 +4,7 @@
 */
 
 window.addEventListener("DOMContentLoaded", () => {
-    function shouldRedirectHomePage(user, isLoginPage) {
+    function shouldRedirectToHomePage(user, isLoginPage) {
         return user && isLoginPage;
     }
 
@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const authenticatedUser = JSON.parse(localStorage.getItem("auth"));
     const isLoginPage = window.location.href.includes("login");
 
-    if (shouldRedirectHomePage(authenticatedUser, isLoginPage)) {
-        window.location.href= "/";
+    if (shouldRedirectToHomePage(authenticatedUser, isLoginPage)) {
+      window.location.href = "/";
     } else if (shouldRedirectToLoginPage(authenticatedUser, isLoginPage)) {
         window.location.href = "/login.html";
     }
